@@ -1,0 +1,82 @@
+{% extends 'base.html' %} {% block title %}contacts{% endblock title %}
+ {% block body %}
+<div class="container my-0 mb-0 p-5 ">
+  <h2 class="text-center ">Share Your Experience with Us</h2>
+  <p class="text-center ">Share your overall experience online as well as offline in our stores</p>
+  <form method = "post" action = "/contacts"class="row g-3 p-2">
+    {% csrf_token %}
+    <div class="col-md-6">
+      <label for="name" class="form-label"></label>
+      <input type="text" class="form-control" id="name" placeholder="First name">
+    </div>
+    <div class="col-md-6">
+        <label for="name" class="form-label"></label>
+        <input type="text" class="form-control" name = "name" id="name" placeholder="last name">
+      </div>
+    <div class="col-md-12">
+        <label for="inputemail4" class="form-label">Email</label>
+        <input type="email" name = "email"  class="form-control" id="email" placeholder="exp@gmail.com">
+      </div>
+    <div class="col-12">
+      <label for="desc">Concerned issue</label>
+      <textarea class="form-control" id="desc" rows = "3" name="desc"></textarea>
+    </div>
+    <div class="col-12">
+        <label for="issue" class="form-label">Phone</label>
+        <input
+          type="phone"
+          name = "phone"
+          class="form-control"
+          id="phone"
+        />
+      </div>
+   
+      <div class="col-12">
+      <button type="submit" class="btn btn-danger text-center" >Submit</button>
+    </div>
+  </form>
+</div>
+<div class="container-fluid text-bg-danger my-5 mb-0">
+  <footer class="py-5 mb-0" >
+    <div class="row">
+      
+      <div class="col-6 col-md-2 mb-3">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="/" class="nav-link p-0 link-light">Home</a></li>
+          <li class="nav-item mb-2"><a href="/services" class="nav-link p-0 link-light">Services</a></li>
+          <li class="nav-item mb-2"><a href="/cocoClub" class="nav-link p-0 link-light">Coco Club</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 mb-3">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 link-light">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 link-light">About</a></li>
+          <li class="nav-item mb-2"><a href="/contact" class="nav-link p-0 link-light">Contac us</a></li>
+        </ul>
+        </div>
+
+      <div class="col-md-5 offset-md-1 mb-3 text-light">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-light text-dark" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p class="text-light">&copy; 2023 Company, Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+{% endblock body %}
